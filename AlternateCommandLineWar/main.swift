@@ -99,7 +99,7 @@ class BeggarThyNeighbor {
                     chances -= 1
                     showDown(from: offense, against: defense)
                 }
-            } else if offense.cards.count == 0 {
+            } else if offense.cards.count == 0 { 
                 annouceWinner(Winner: defense.description)
             } else {
                 switchWhoIsOnOffense()
