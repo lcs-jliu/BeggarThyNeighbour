@@ -19,7 +19,7 @@ class BeggarThyNeighbor {
     var playerHand : Hand
     var computerHand : Hand
     
-    // The place where players put card down
+    // The place where players put card down
     var middle : Hand
     
     // Status of the players
@@ -101,7 +101,7 @@ class BeggarThyNeighbor {
         
         // Reported who triggered the showndown and how many chances the defense have
         print("\(middle.cards.last!.simpleDescription()) from \(offense.description) activate showndown against \(defense.description)")
-        print("\(defense.description) has \(chances) chances")
+        print("\(defense.description) has \(chances) chance(s)")
         print("- - - - - - - - - - - - - - - - - - -")
         
         // Keep dealing cards as long as they still have chances
