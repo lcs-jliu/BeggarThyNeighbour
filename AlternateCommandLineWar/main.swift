@@ -99,6 +99,8 @@ class BeggarThyNeighbor {
         // Record the number of showdowns
         numberOfShowdown += 1
         
+        waitForUserInput()
+        
         // Reported who triggered the showndown and how many chances the defense have
         print("\(middle.cards.last!.simpleDescription()) from \(offense.description) activate showndown against \(defense.description)")
         print("\(defense.description) has \(chances) chance(s)")
@@ -108,6 +110,8 @@ class BeggarThyNeighbor {
         while chances != 0 {
             
             if defense.cards.count > 0 {
+                
+                waitForUserInput()
                 
                 // Show the card that is dealt by defense
                 print("\(defense.description) deals the top card of \(defense.topCard!.simpleDescription())")
@@ -147,6 +151,9 @@ class BeggarThyNeighbor {
         print("==========")
         print("Game start")
         print("==========")
+        playerHand.status(verbose: false)
+        computerHand.status(verbose: false)
+        middle.status(verbose: false)
         
         // Keep playing when game is not over
         while offense.cards.count > 0 && GameIsOver == false {
@@ -154,12 +161,12 @@ class BeggarThyNeighbor {
             // Track the number of rounds
             rounds += 1
             
+            waitForUserInput()
+            
             // Report on the number of rounds and current status
             print("--------------------------------")
             print("Now starting round \(rounds)...")
-            playerHand.status(verbose: false)
-            computerHand.status(verbose: false)
-            middle.status(verbose: false)
+
             
             // Card of the offense dealt
             print("\(offense.description) deals the top card of \(offense.topCard!.simpleDescription())")
@@ -200,6 +207,12 @@ class BeggarThyNeighbor {
         }
     }
 }
+
+// Let the user see what's happening before carrying on
+func waitForUserInput() {
+        print("Press ENTER to continue...", terminator: "")
+        readLine()
+    }
 
 // Creates an instance of a class -- to play the game
 BeggarThyNeighbor()
